@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/madilynsimons/Documents/cracking-coding/concepts/array-list/array_list.cc
+cstdlib
+-
+iostream
+-
+vector
+-
+
