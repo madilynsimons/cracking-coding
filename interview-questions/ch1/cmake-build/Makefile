@@ -80,6 +80,18 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -111,18 +123,6 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -182,6 +182,19 @@ is_unique.exe/fast:
 	$(MAKE) -f CMakeFiles/is_unique.exe.dir/build.make CMakeFiles/is_unique.exe.dir/build
 .PHONY : is_unique.exe/fast
 
+#=============================================================================
+# Target rules for targets named urlify.exe
+
+# Build rule for target.
+urlify.exe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 urlify.exe
+.PHONY : urlify.exe
+
+# fast build rule for target.
+urlify.exe/fast:
+	$(MAKE) -f CMakeFiles/urlify.exe.dir/build.make CMakeFiles/urlify.exe.dir/build
+.PHONY : urlify.exe/fast
+
 check_permutation.o: check_permutation.cc.o
 
 .PHONY : check_permutation.o
@@ -236,6 +249,33 @@ is_unique.cc.s:
 	$(MAKE) -f CMakeFiles/is_unique.exe.dir/build.make CMakeFiles/is_unique.exe.dir/is_unique.cc.s
 .PHONY : is_unique.cc.s
 
+urlify.o: urlify.cc.o
+
+.PHONY : urlify.o
+
+# target to build an object file
+urlify.cc.o:
+	$(MAKE) -f CMakeFiles/urlify.exe.dir/build.make CMakeFiles/urlify.exe.dir/urlify.cc.o
+.PHONY : urlify.cc.o
+
+urlify.i: urlify.cc.i
+
+.PHONY : urlify.i
+
+# target to preprocess a source file
+urlify.cc.i:
+	$(MAKE) -f CMakeFiles/urlify.exe.dir/build.make CMakeFiles/urlify.exe.dir/urlify.cc.i
+.PHONY : urlify.cc.i
+
+urlify.s: urlify.cc.s
+
+.PHONY : urlify.s
+
+# target to generate assembly for a file
+urlify.cc.s:
+	$(MAKE) -f CMakeFiles/urlify.exe.dir/build.make CMakeFiles/urlify.exe.dir/urlify.cc.s
+.PHONY : urlify.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -244,18 +284,22 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... install"
 	@echo "... check_permutation.exe"
 	@echo "... is_unique.exe"
 	@echo "... list_install_components"
 	@echo "... edit_cache"
+	@echo "... urlify.exe"
 	@echo "... rebuild_cache"
-	@echo "... install"
 	@echo "... check_permutation.o"
 	@echo "... check_permutation.i"
 	@echo "... check_permutation.s"
 	@echo "... is_unique.o"
 	@echo "... is_unique.i"
 	@echo "... is_unique.s"
+	@echo "... urlify.o"
+	@echo "... urlify.i"
+	@echo "... urlify.s"
 .PHONY : help
 
 
