@@ -4,5 +4,9 @@ project (Chapter1)
 set(CMAKE_INSTALL_PREFIX /home/madilynsimons/Documents/cracking-coding/interview-questions/ch1)
 
 add_executable(is_unique.exe is_unique.cc)
+add_executable(check_permutation.exe check_permutation.cc)
 
-install(TARGETS is_unique.exe DESTINATION bin)
+set(EXECUTABLES is_unique.exe
+                check_permutation.exe)
+
+install(TARGETS ${EXECUTABLES} DESTINATION bin)

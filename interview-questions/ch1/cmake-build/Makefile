@@ -68,27 +68,6 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -100,6 +79,27 @@ install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -157,6 +157,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named check_permutation.exe
+
+# Build rule for target.
+check_permutation.exe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 check_permutation.exe
+.PHONY : check_permutation.exe
+
+# fast build rule for target.
+check_permutation.exe/fast:
+	$(MAKE) -f CMakeFiles/check_permutation.exe.dir/build.make CMakeFiles/check_permutation.exe.dir/build
+.PHONY : check_permutation.exe/fast
+
+#=============================================================================
 # Target rules for targets named is_unique.exe
 
 # Build rule for target.
@@ -168,6 +181,33 @@ is_unique.exe: cmake_check_build_system
 is_unique.exe/fast:
 	$(MAKE) -f CMakeFiles/is_unique.exe.dir/build.make CMakeFiles/is_unique.exe.dir/build
 .PHONY : is_unique.exe/fast
+
+check_permutation.o: check_permutation.cc.o
+
+.PHONY : check_permutation.o
+
+# target to build an object file
+check_permutation.cc.o:
+	$(MAKE) -f CMakeFiles/check_permutation.exe.dir/build.make CMakeFiles/check_permutation.exe.dir/check_permutation.cc.o
+.PHONY : check_permutation.cc.o
+
+check_permutation.i: check_permutation.cc.i
+
+.PHONY : check_permutation.i
+
+# target to preprocess a source file
+check_permutation.cc.i:
+	$(MAKE) -f CMakeFiles/check_permutation.exe.dir/build.make CMakeFiles/check_permutation.exe.dir/check_permutation.cc.i
+.PHONY : check_permutation.cc.i
+
+check_permutation.s: check_permutation.cc.s
+
+.PHONY : check_permutation.s
+
+# target to generate assembly for a file
+check_permutation.cc.s:
+	$(MAKE) -f CMakeFiles/check_permutation.exe.dir/build.make CMakeFiles/check_permutation.exe.dir/check_permutation.cc.s
+.PHONY : check_permutation.cc.s
 
 is_unique.o: is_unique.cc.o
 
@@ -203,12 +243,16 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... edit_cache"
+	@echo "... install/local"
+	@echo "... check_permutation.exe"
 	@echo "... is_unique.exe"
 	@echo "... list_install_components"
-	@echo "... install/local"
+	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... install"
+	@echo "... check_permutation.o"
+	@echo "... check_permutation.i"
+	@echo "... check_permutation.s"
 	@echo "... is_unique.o"
 	@echo "... is_unique.i"
 	@echo "... is_unique.s"

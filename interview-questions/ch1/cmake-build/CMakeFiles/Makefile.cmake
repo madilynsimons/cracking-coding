@@ -114,5 +114,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/check_permutation.exe.dir/DependInfo.cmake"
   "CMakeFiles/is_unique.exe.dir/DependInfo.cmake"
   )
