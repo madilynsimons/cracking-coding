@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/madilynsimons/Documents/cracking-coding/concepts/string-builder/string_builder.cc
+cstdlib
+-
+iostream
+-
+vector
+-
+

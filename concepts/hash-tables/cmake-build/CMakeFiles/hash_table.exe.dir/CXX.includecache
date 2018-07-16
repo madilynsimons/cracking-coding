@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/madilynsimons/Documents/cracking-coding/concepts/hash-tables/hash_table.cc
+iostream
+-
+string
+-
+vector
+-
+
