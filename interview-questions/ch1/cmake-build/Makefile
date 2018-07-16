@@ -80,6 +80,16 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -91,16 +101,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -183,6 +183,19 @@ is_unique.exe/fast:
 .PHONY : is_unique.exe/fast
 
 #=============================================================================
+# Target rules for targets named palindrome_permutation.exe
+
+# Build rule for target.
+palindrome_permutation.exe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 palindrome_permutation.exe
+.PHONY : palindrome_permutation.exe
+
+# fast build rule for target.
+palindrome_permutation.exe/fast:
+	$(MAKE) -f CMakeFiles/palindrome_permutation.exe.dir/build.make CMakeFiles/palindrome_permutation.exe.dir/build
+.PHONY : palindrome_permutation.exe/fast
+
+#=============================================================================
 # Target rules for targets named urlify.exe
 
 # Build rule for target.
@@ -249,6 +262,33 @@ is_unique.cc.s:
 	$(MAKE) -f CMakeFiles/is_unique.exe.dir/build.make CMakeFiles/is_unique.exe.dir/is_unique.cc.s
 .PHONY : is_unique.cc.s
 
+palindrome_permutation.o: palindrome_permutation.cc.o
+
+.PHONY : palindrome_permutation.o
+
+# target to build an object file
+palindrome_permutation.cc.o:
+	$(MAKE) -f CMakeFiles/palindrome_permutation.exe.dir/build.make CMakeFiles/palindrome_permutation.exe.dir/palindrome_permutation.cc.o
+.PHONY : palindrome_permutation.cc.o
+
+palindrome_permutation.i: palindrome_permutation.cc.i
+
+.PHONY : palindrome_permutation.i
+
+# target to preprocess a source file
+palindrome_permutation.cc.i:
+	$(MAKE) -f CMakeFiles/palindrome_permutation.exe.dir/build.make CMakeFiles/palindrome_permutation.exe.dir/palindrome_permutation.cc.i
+.PHONY : palindrome_permutation.cc.i
+
+palindrome_permutation.s: palindrome_permutation.cc.s
+
+.PHONY : palindrome_permutation.s
+
+# target to generate assembly for a file
+palindrome_permutation.cc.s:
+	$(MAKE) -f CMakeFiles/palindrome_permutation.exe.dir/build.make CMakeFiles/palindrome_permutation.exe.dir/palindrome_permutation.cc.s
+.PHONY : palindrome_permutation.cc.s
+
 urlify.o: urlify.cc.o
 
 .PHONY : urlify.o
@@ -284,10 +324,11 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... check_permutation.exe"
 	@echo "... is_unique.exe"
-	@echo "... list_install_components"
+	@echo "... install"
+	@echo "... palindrome_permutation.exe"
 	@echo "... edit_cache"
 	@echo "... urlify.exe"
 	@echo "... rebuild_cache"
@@ -297,6 +338,9 @@ help:
 	@echo "... is_unique.o"
 	@echo "... is_unique.i"
 	@echo "... is_unique.s"
+	@echo "... palindrome_permutation.o"
+	@echo "... palindrome_permutation.i"
+	@echo "... palindrome_permutation.s"
 	@echo "... urlify.o"
 	@echo "... urlify.i"
 	@echo "... urlify.s"

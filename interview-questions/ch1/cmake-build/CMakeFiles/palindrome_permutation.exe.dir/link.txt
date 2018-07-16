@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/palindrome_permutation.exe.dir/palindrome_permutation.cc.o  -o palindrome_permutation.exe 

@@ -1,3 +1,4 @@
 /home/madilynsimons/Documents/cracking-coding/interview-questions/ch1/bin/is_unique.exe
 /home/madilynsimons/Documents/cracking-coding/interview-questions/ch1/bin/check_permutation.exe
 /home/madilynsimons/Documents/cracking-coding/interview-questions/ch1/bin/urlify.exe
+/home/madilynsimons/Documents/cracking-coding/interview-questions/ch1/bin/palindrome_permutation.exe

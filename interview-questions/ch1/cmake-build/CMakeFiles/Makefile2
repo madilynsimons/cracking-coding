@@ -134,13 +134,50 @@ clean: CMakeFiles/is_unique.exe.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/palindrome_permutation.exe.dir
+
+# All Build rule for target.
+CMakeFiles/palindrome_permutation.exe.dir/all:
+	$(MAKE) -f CMakeFiles/palindrome_permutation.exe.dir/build.make CMakeFiles/palindrome_permutation.exe.dir/depend
+	$(MAKE) -f CMakeFiles/palindrome_permutation.exe.dir/build.make CMakeFiles/palindrome_permutation.exe.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/madilynsimons/Documents/cracking-coding/interview-questions/ch1/cmake-build/CMakeFiles --progress-num=5,6 "Built target palindrome_permutation.exe"
+.PHONY : CMakeFiles/palindrome_permutation.exe.dir/all
+
+# Include target in all.
+all: CMakeFiles/palindrome_permutation.exe.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/palindrome_permutation.exe.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/madilynsimons/Documents/cracking-coding/interview-questions/ch1/cmake-build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/palindrome_permutation.exe.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/madilynsimons/Documents/cracking-coding/interview-questions/ch1/cmake-build/CMakeFiles 0
+.PHONY : CMakeFiles/palindrome_permutation.exe.dir/rule
+
+# Convenience name for target.
+palindrome_permutation.exe: CMakeFiles/palindrome_permutation.exe.dir/rule
+
+.PHONY : palindrome_permutation.exe
+
+# clean rule for target.
+CMakeFiles/palindrome_permutation.exe.dir/clean:
+	$(MAKE) -f CMakeFiles/palindrome_permutation.exe.dir/build.make CMakeFiles/palindrome_permutation.exe.dir/clean
+.PHONY : CMakeFiles/palindrome_permutation.exe.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/palindrome_permutation.exe.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/urlify.exe.dir
 
 # All Build rule for target.
 CMakeFiles/urlify.exe.dir/all:
 	$(MAKE) -f CMakeFiles/urlify.exe.dir/build.make CMakeFiles/urlify.exe.dir/depend
 	$(MAKE) -f CMakeFiles/urlify.exe.dir/build.make CMakeFiles/urlify.exe.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/madilynsimons/Documents/cracking-coding/interview-questions/ch1/cmake-build/CMakeFiles --progress-num=5,6 "Built target urlify.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/madilynsimons/Documents/cracking-coding/interview-questions/ch1/cmake-build/CMakeFiles --progress-num=7,8 "Built target urlify.exe"
 .PHONY : CMakeFiles/urlify.exe.dir/all
 
 # Include target in all.
