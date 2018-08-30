@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/check_permutation.exe.dir/check_permutation.cc.o  -o check_permutation.exe 
