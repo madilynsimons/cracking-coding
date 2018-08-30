@@ -15,7 +15,32 @@ void print(std::vector<std::vector<int> >& in)
 
 void rotate(std::vector<std::vector<int> >& in)
 {
+  int n = in.size();
 
+  for(int layer = 0; layer < n/2; layer++)
+  {
+    int start = layer;
+    std::cout << "start:\t " << start << std::endl;
+    int end = (n-1) - layer;
+    std::cout << "end:\t " << end << std::endl;
+    int offset = end-start;
+    std::cout << "offset:\t " << offset << std::endl;
+    std::cout << "-----------" << std::endl;
+    for(int it = 0; it < offset; it++)
+    {
+      int *top = &in[start][start + it];
+      int *right = &in[start + it][end];
+      int *bottom = &in[end][end - it];
+      int *left = &in[end - it][start];
+      int temp;
+
+      temp = *top;
+      *top = *left;
+      *left = *bottom;
+      *bottom = *right;
+      *right = temp;
+    }
+  }
 }
 
 int main(){
