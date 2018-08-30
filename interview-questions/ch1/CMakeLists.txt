@@ -9,12 +9,14 @@ add_executable(urlify.exe urlify.cc)
 add_executable(palindrome_permutation.exe palindrome_permutation.cc)
 add_executable(one_away.exe one_away.cc)
 add_executable(matrix_rotate.exe matrix_rotate.cc)
+add_executable(zero_matrix.exe zero_matrix.cc)
 
 set(EXECUTABLES is_unique.exe
                 check_permutation.exe
                 urlify.exe
                 palindrome_permutation.exe
                 one_away.exe
-                matrix_rotate.exe)
+                matrix_rotate.exe
+                zero_matrix.exe)
 
 install(TARGETS ${EXECUTABLES} DESTINATION bin)
